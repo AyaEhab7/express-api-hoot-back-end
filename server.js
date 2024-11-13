@@ -10,6 +10,7 @@ const cors = require('cors');
 const testJWTRouter = require('./controllers/test-jwt');
 const usersRouter = require('./controllers/users');
 const profilesRouter = require('./controllers/profiles');
+const hootsRouter = require('./controllers/hoots.js');
 
 const app = express();
 app.use(express.json());
@@ -24,6 +25,7 @@ app.use('/users', usersRouter);
 //Protected
 app.use(verifyToken);
 app.use('/profiles', profilesRouter);
+app.use('/hoots', hootsRouter);
 
 
 app.listen(3000, () => {
